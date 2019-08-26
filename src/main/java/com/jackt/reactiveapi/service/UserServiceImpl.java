@@ -27,6 +27,11 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
     }
 
     @Override
+    public Mono<User> findByUsername(UserDto userDto) {
+        return userRepository.findUserByUsername(userDto.getUsername());
+    }
+
+    @Override
     public Mono<User> createUser(UserDto userDto) {
         User user = mapUserDtoToUser(userDto);
         return userRepository.save(user);
@@ -43,6 +48,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
     }
 
     protected User mapUserDtoToUser(UserDto userDto) {
-        return new User(userDto.getId(), userDto.getFirstName(), userDto.getLastName(), userDto.getEmail());
+        return new User(userDto.getId(), userDto.getUsername(), userDto.getPassword(), userDto.getFirstName(),
+                userDto.getLastName(), userDto.getEmail());
     }
 }

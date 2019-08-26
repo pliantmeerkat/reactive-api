@@ -7,6 +7,8 @@ import reactor.core.publisher.Mono;
 public interface UserService extends BaseService {
     Mono<User> getUser(UserDto userDto);
 
+    Mono<User> findByUsername(UserDto userDto);
+
     Mono<User> createUser(UserDto userDto);
 
     Mono<User> editUser(UserDto userDto);

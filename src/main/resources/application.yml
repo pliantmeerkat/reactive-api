@@ -4,3 +4,11 @@ spring:
       database: reactiveApi
       host: localHost
       port: 27017
+  springbootwebfluxjjwt:
+    jwt:
+      expiration: 90000
+    password:
+      encoder:
+        secret: thisisnotasecret
+        iteration: 33
+        keylength: 512

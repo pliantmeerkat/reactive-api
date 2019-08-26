@@ -9,14 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto extends BaseDto {
+public class AuthRequestDto extends BaseDto {
     private String username;
     private String password;
-    private String firstName;
-    private String lastName;
-    private String email;
-
-    public UserDto(String id) {
-        super(id);
-    }
 }

@@ -1,6 +1,7 @@
 package com.jackt.reactiveapi.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jackt.reactiveapi.constants.ApplicationConstants;
 import com.jackt.reactiveapi.domain.User;
 import com.jackt.reactiveapi.service.UserService;
 import com.jackt.reactiveapi.view.UserDto;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping(path = "/user")
+@RequestMapping(path = ApplicationConstants.API_URL_EXT + "users")
 public class UserController extends BaseController {
 
     private final UserService userService;
