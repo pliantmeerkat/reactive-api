@@ -5,6 +5,7 @@ import com.jackt.reactiveapi.constants.ApplicationConstants;
 import com.jackt.reactiveapi.domain.User;
 import com.jackt.reactiveapi.service.UserService;
 import com.jackt.reactiveapi.view.UserDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
@@ -14,6 +15,7 @@ public class UserController extends BaseController {
 
     private final UserService userService;
 
+    @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
